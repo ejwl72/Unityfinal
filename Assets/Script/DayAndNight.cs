@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DayAndNight  : MonoBehaviour
 {
+    /// gitgitgitgitgitgit
     int Day;
     [SerializeField] private float secondPerRealTimeSecound;
 
