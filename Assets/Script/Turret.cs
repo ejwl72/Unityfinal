@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret1 : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     public GameObject[] gameObjects;
     private int pivot = 0;
@@ -11,7 +11,7 @@ public class Turret1 : MonoBehaviour
     float timer;
     private int level = 3;
 
-    //public GameObject bulletEffect;
+    //public GameObject bulletEffect; //이펙트 추가하기
     //ParticleSystem ps;
 
 
@@ -29,16 +29,6 @@ public class Turret1 : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        //ps = bulletEffect.GetComponent<ParticleSystem>();
-        //UpdateTarget함수를 딜레이 없이, 0.5초 마다 호출 무한 반복
-        /*gameObjects = new GameObject[500]; ///오브젝트 풀링 기법
-        for (int i = 0; i < 500; i++)
-        {
-            GameObject gameObject = Instantiate(bullet, partToRotate.position, Quaternion.identity);
-            gameObjects[i] = gameObject;
-            gameObject.SetActive(false);
-        }
-        StartCoroutine(Spawnbullet());*/
     }
 
     void UpdateTarget()
@@ -68,14 +58,12 @@ public class Turret1 : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
         if (timer >= delay)
         {
-            var bullet = Instantiate(bulletFrefeb, transform.position, Quaternion.identity).GetComponent<Bullet1>();
+            var bullet = Instantiate(bulletFrefeb, transform.position, Quaternion.identity).GetComponent<Bullet>();
             bullet.Fire(transform.forward);
             timer = 0;
         }
@@ -96,18 +84,4 @@ public class Turret1 : MonoBehaviour
         Gizmos.color = Color.red; //범위 만큼 선그어주기. 빨간색으로다가
         Gizmos.DrawWireSphere(transform.position, range);
     }
-
-    /*IEnumerator Spawnbullet()
-    {
-        yield return new WaitForSeconds(level);
-
-        Vector3 dir = target.position - transform.position; //타겟과 터렛의 위치를 뺀 값을 dir로 갖고
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);  //회전 하는 건데 따로설명
-
-        gameObjects[pivot++].SetActive(true);
-        if (pivot == 500) pivot = 0;
-        StartCoroutine(Spawnbullet());
-    }*/
 }

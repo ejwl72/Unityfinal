@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet1 : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     bool isFire;
     Vector3 direction;
@@ -18,8 +18,6 @@ public class Bullet1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // GetComponent<Rigidbody>().AddForce(transform.forward *Speed);
-        //GetComponent<Rigidbody>().AddForce(transform.forward * Speed);
     }
 
     // Update is called once per frame
