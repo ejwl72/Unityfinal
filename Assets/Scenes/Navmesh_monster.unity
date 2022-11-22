@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 4cbd35a2d55822948a953c07baf64793, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 60a5154c88e659b4ab72b55325c31c3d, type: 2}
 --- !u!1 &19047228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2132,7 @@ GameObject:
   - component: {fileID: 834894632}
   - component: {fileID: 834894631}
   - component: {fileID: 834894630}
+  - component: {fileID: 834894634}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -2217,6 +2218,28 @@ Transform:
   m_Father: {fileID: 1279872378}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &834894634
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834894629}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &857722635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,7 +4599,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -6528,7 +6551,7 @@ GameObject:
   m_TagString: Lwall
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!114 &1966096150
 MonoBehaviour:

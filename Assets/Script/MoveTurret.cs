@@ -33,6 +33,8 @@ public class MoveTurret : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        Destroy(gameObject, 10f);
+
         agent = GetComponent<NavMeshAgent>();
         t_anim = GetComponent<Animator>();
     }
@@ -83,7 +85,7 @@ public class MoveTurret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);  //회전 하는 건데 따로설명
         
-        
+        //agent.SetDestination(movetarget.position);
     }
 
     private void OnDrawGizmosSelected()
