@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour
     float m_currentFireRate;
 
     public GameObject bulletFactory;
-    public GameObject target;
+    //public GameObject target;
 
     Transform m_tfTarget = null;
 
@@ -65,8 +65,10 @@ public class Turret : MonoBehaviour
                 if (m_currentFireRate <=0)
                 {
                     m_currentFireRate = m_fireRate;
-                    GameObject bullet = Instantiate(bulletFactory, target.transform.position ,target.transform.rotation);
-                    bullet.transform.position = m_tfGunBody.transform.position;
+                    Debug.Log("น฿ป็!!");
+                    //m_currentFireRate = m_fireRate;
+                    //GameObject bullet = Instantiate(bulletFactory, target.transform.position ,target.transform.rotation);
+                    //bullet.transform.position = m_tfGunBody.transform.position;
                 }
             }
         }

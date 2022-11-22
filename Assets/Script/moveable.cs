@@ -11,6 +11,7 @@ public class moveable : MonoBehaviour
     [SerializeField]
     Transform target;
 
+    public int zomhp;
     WALL wall;
     private void Awake()
     {
@@ -21,6 +22,10 @@ public class moveable : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
+        if (zomhp <=0)
+        {
+            Destroy(gameObject);
+        }
         anim.SetBool("walk", true);
     }
     private void OnCollisionEnter(Collision collision)
@@ -35,6 +40,13 @@ public class moveable : MonoBehaviour
         {
             InvokeRepeating("Rattackmove", 2.0f, 1.0f);
             anim.SetBool("attack", true);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="bullet")
+        {
+            zomhp -= 1;
         }
     }
     void Rattackmove()

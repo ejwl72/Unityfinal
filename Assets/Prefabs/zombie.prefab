@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 465408071467352988}
   m_Layer: 0
   m_Name: zombie
-  m_TagString: Untagged
+  m_TagString: Zom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,6 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   target: {fileID: 0}
+  zomhp: 5
 --- !u!195 &465408071467352988
 NavMeshAgent:
   m_ObjectHideFlags: 0
